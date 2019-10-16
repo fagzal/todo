@@ -1,0 +1,10 @@
+# This to document how this came to life
+
+# --sup for OTP
+mix new todoapp --sup
+
+# Added cowboy and poision to mix.exs
+
+# ran mix deps.get
+
+# Modified lib/todoapp/application.ex, added Cowboy children calls on http
