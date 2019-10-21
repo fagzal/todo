@@ -1,6 +1,14 @@
 # This to document how this came to life
 
-# --sup for OTP
+# Sublime syntax highlighting
+cd ~/.config/sublime-text-3/Packages
+git clone git://github.com/elixir-lang/elixir-tmbundle Elixir
+
+# Sublime code completition and stuff
+cd ~/.config/sublime-text-3/Packages/
+git clone https://github.com/edelvalle/SuperElixir
+
+# --sup for OTP (adds supervisor)
 mix new todoapp --sup
 
 # Added cowboy and poision to mix.exs
@@ -8,3 +16,9 @@ mix new todoapp --sup
 # ran mix deps.get
 
 # Modified lib/todoapp/application.ex, added Cowboy children calls on http
+
+# Using these tutorials:
+- https://dev.to/jonlunsford/elixir-building-a-small-json-endpoint-with-plug-cowboy-and-poison-1826
+- https://elixirschool.com/en/lessons/advanced/otp-concurrency/
+- https://medium.com/learn-elixir/comfortable-learning-curve-for-elixir-part-3-44fa1cad3a9f
+
