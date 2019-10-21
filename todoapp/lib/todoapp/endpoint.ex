@@ -20,7 +20,18 @@ defmodule Todoapp.Endpoint do
 		send_resp(conn, 200, "pong")
 	end
 
-	# Actually this is enought, but...
+	# This is for accepting protobuf
+	post "/pbping" do
+		%{"payload" => payload } = conn.body_params
+		answer = process_pping(payload)
+
+		send_resp(conn, 200, answer)
+	end
+
+	defp process_pping(payload) do
+	    dec = Messages.Person.decode(payload)
+		dec.name
+	end
 
 	# Catch-all:
 	match _ do 

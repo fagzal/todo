@@ -1,0 +1,3 @@
+[submodule "todoapp/protobuf"]
+	path = todoapp/protobuf
+	url = https://github.com/protocolbuffers/protobuf.git

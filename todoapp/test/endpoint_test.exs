@@ -17,6 +17,16 @@ defmodule Todoapp.EndpointTest do
     assert conn.resp_body == "pong"
   end
 
+  test "protobuf encoding test" do
+    msg = Messages.Person.new(name: "Bela", id: 5)
+    enc = Messages.Person.encode(msg)
+	conn = conn(:post, "/pbping", %{payload: enc})
+	conn = Todoapp.Endpoint.call(conn, @opts)
+
+	name = conn.resp_body
+	assert name === "Bela"
+  end
+
   test "it returns 404 when no route matches" do
     # Create a test connection
     conn = conn(:get, "/fail")

@@ -13,7 +13,7 @@ mix new todoapp --sup
 
 # Added cowboy and poision to mix.exs
 
-# ran mix deps.get
+mix deps.get
 
 # Modified lib/todoapp/application.ex, added Cowboy children calls on http
 
@@ -22,3 +22,8 @@ mix new todoapp --sup
 - https://elixirschool.com/en/lessons/advanced/otp-concurrency/
 - https://medium.com/learn-elixir/comfortable-learning-curve-for-elixir-part-3-44fa1cad3a9f
 
+# Added protobuf to mix.exs
+- {:exprotobuf, "~> 1.2.17"}
+- mix deps get
+
+# Added messages definition to lib, messages.exs
